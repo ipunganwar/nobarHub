@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const movie = require('../controllers/movieDb')
 
-router.get('/', (req, res) => {
-  console.log('masuk');
-  res.send({masuk:'masuk'})
-})
+router.get('/', movie.playNow)
 
 module.exports = router;
