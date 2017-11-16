@@ -1,9 +1,12 @@
-var request = require("request");
+const request = require("request");
+const dotenv = require('dotenv').config()
+const apiKey = process.env.API_KEY_MOVIEDB;
 
 let playNowId = (req, res) => {
+  // get list movies regional indonesia
   var options = { method: 'GET',
     url: 'https://api.themoviedb.org/3/movie/now_playing',
-    qs: { region: 'id', page: '1', language: 'id', api_key: 'd98a38d9b77d57002f7b1b64a1872aad' },
+    qs: { region: 'id', page: '1', language: 'id', api_key: apiKey },
     body: '{}' };
 
   request(options, function (error, response, body) {
@@ -13,9 +16,10 @@ let playNowId = (req, res) => {
 }
 
 let playNowEn = (req, res) => {
+  // get list movies regional english
   var options = { method: 'GET',
     url: 'https://api.themoviedb.org/3/movie/now_playing',
-    qs: { page: '1', language: 'id', api_key: 'd98a38d9b77d57002f7b1b64a1872aad' },
+    qs: { page: '1', language: 'id', api_key: apiKey },
     body: '{}' };
 
   request(options, function (error, response, body) {
@@ -25,9 +29,10 @@ let playNowEn = (req, res) => {
 }
 
 let genres = (req, res) => {
+  // get list name of genres
   var options = { method: 'GET',
   url: 'https://api.themoviedb.org/3/genre/movie/list',
-  qs: { language: 'id', api_key: 'd98a38d9b77d57002f7b1b64a1872aad' },
+  qs: { language: 'id', api_key: apiKey },
   body: '{}' };
 
   request(options, function (error, response, body) {
@@ -37,12 +42,13 @@ let genres = (req, res) => {
 }
 
 let upcoming = (req, res) => {
+  // get list movies upcoming soon
   var options = { method: 'GET',
   url: 'https://api.themoviedb.org/3/movie/upcoming',
   qs:
    { page: '1',
      language: 'en-US',
-     api_key: 'd98a38d9b77d57002f7b1b64a1872aad' },
+     api_key: apiKey },
   body: '{}' };
 
   request(options, function (error, response, body) {
