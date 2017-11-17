@@ -1,7 +1,9 @@
 const axios = require('axios')
+const TOKEN = process.env.TOKEN;
+
 
 const events = (req, res) =>{
-	axios.get('https://www.eventbriteapi.com/v3/users/me/owned_events/?token=5NZUZAR6DLJ5KUFWKNGT')
+	axios.get(`https://www.eventbriteapi.com/v3/users/me/owned_events/?token=${TOKEN}`)
 	  .then(function (response) {
 	    res.send(response.data)
 	  })
@@ -11,7 +13,7 @@ const events = (req, res) =>{
 }
 
 const about_me = (req, res) => {
-	axios.get('https://www.eventbriteapi.com/v3/users/me/?token=5NZUZAR6DLJ5KUFWKNGT')
+	axios.get(`https://www.eventbriteapi.com/v3/users/me/?token=${TOKEN}`)
 	  .then(function (response) {
 	    res.send(response.data)
 	  })
@@ -23,7 +25,7 @@ const about_me = (req, res) => {
 
 const create = (req, res) => {
 	let  EVENTBRITE_API_URL = 'https://www.eventbriteapi.com/v3/',
-		_token = '5NZUZAR6DLJ5KUFWKNGT'
+		_token = TOKEN
 
 	var _headers = {
     'Authorization': 'Bearer ' + _token,
@@ -57,7 +59,7 @@ const create = (req, res) => {
 }
 
 const event_me = (req, res) =>{
-	axios.get('https://www.eventbriteapi.com/v3/users/me/owned_events/?token=5NZUZAR6DLJ5KUFWKNGT')
+	axios.get(`https://www.eventbriteapi.com/v3/users/me/owned_events/?token=${TOKEN}`)
 	  .then(function (response) {
 	    res.send(response.data)
 	  })
