@@ -4,19 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-const cors = require('cors')
-const mongo = require('mongodb');
-const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/nobarDB');
-const db = mongoose.connection;
+var cors = require('cors')
 
 var movies = require('./routes/movieDb');
-var index = require('./routes/index');
 var events = require('./routes/eventbrite');
 var users = require('./routes/users');
 
 var app = express();
+
+app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,11 +26,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cors())
 app.use('/api/movies', movies);
 app.use('/api/events', events);
 app.use('/api/users', users);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -22,6 +22,7 @@ const about_me = (req, res) => {
 	});
 }
 
+
 const event_me = (req, res) =>{
 	axios.get(`${api.EVENTBRITE_API_URL}users/me/owned_events/?token=${api._token}`)
 	  .then(function (response) {
@@ -57,6 +58,7 @@ axios.post(api.options.url, api.options.form)
 	  .catch(function (error) {
 	    res.send(error)
 	});
+
 }
 
 module.exports = {
@@ -66,4 +68,3 @@ module.exports = {
 	event_me,
 
 }
-     

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/assets/semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  </head>
+  <body>
+
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        Nobar Hub
+      </a>
+      <a href="#" class="item">Home</a>
+      <a href="#" class="item">Events</a>
+      <a href="#" class="item">Movies</a>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui transparent inverted icon input">
+            <i class="search icon"></i>
+            <input placeholder="Search" type="text">
+          </div>
+        </div>
+        <a class="item" id="modal-create">Buat Nobar</a>
+        <a class="item">Login</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui centered grid">
+    <div class="twelve wide column">
+      <h2 class="ui dividing header">Events</h2>
+      <div class="ui cards" id="content">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container center aligned">
+      <div class="ui stackable centered inverted divided grid">
+        <div class="seven wide column center aligned">
+          <h4 class="ui inverted header">Nobar Hub</h4>
+          <p>Wadah untuk memfasilitasi para pecinta film untuk membuat event nonton bareng.</p>
+        </div>
+      </div>
+      <div class="ui inverted section divider"></div>
+      <div class="ui horizontal inverted small divided link list">
+        <a class="item" href="#">Site Map</a>
+        <a class="item" href="#">Contact Us</a>
+        <a class="item" href="#">Terms and Conditions</a>
+        <a class="item" href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui modal post">
+    <i class="close icon"></i>
+    <div class="header">
+      Buat Nobar Baru
+    </div>
+    <div class="content">
+      <div class="ui centered grid">
+        <div class="fourteen wide column">
+          <form class="ui form" id="modal-post">
+            <div class="required field">
+              <label>Judul</label>
+              <input name="event-name" placeholder="Judul Nobar" type="text">
+            </div>
+            <div class="required field">
+              <label>Deskripsi</label>
+              <textarea rows="2" name="event-dec" type="text"></textarea>
+            </div>
+            <div class="four fields">
+              <div class="required field">
+                <label>Tanggal Mulai</label>
+                <input placeholder="Tanggal Mulai" name="event-start" type="date">
+              </div>
+              <div class="required field">
+                <label>Jam Mulai</label>
+                <input placeholder="Jam Mulai" name="event-time-start" type="text">
+              </div>
+              <div class="required field">
+                <label>Tanggal Selesai</label>
+                <input placeholder="Tanggal Selasai" name="event-end" type="date">
+              </div>
+              <div class="required field">
+                <label>Jam Selesai</label>
+                <input placeholder="Jam Selesai" name="event-time-end" type="text">
+              </div>
+            </div>
+            <div class="ui form">
+              <div class="field">
+                <label>Pilih Film</label>
+                <select name="movies" class="ui search dropdown">
+                  <option>Pilih Negara</option>
+                  <option value="Indonesia">Indonesia</option>
+                  <option value="Luar Negeri">Luar Negeri</option>
+                </select>
+                <select name="movies-list" class="ui search dropdown" id="dropdown-movies">
+                  <option>Pilih Film</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">
+        Cancel
+      </div>
+      <div class="ui positive right labeled icon button" id="submit-event">
+        Submit
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui modal event" id="modal-event">
+    <i class="close icon"></i>
+    <div class="header">
+      Buat Nobar Baru
+    </div>
+    <div class="content">
+      <div class="ui centered grid">
+        <div class="fourteen wide column">
+
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black deny button">
+        Cancel
+      </div>
+    </div>
+  </div>
+
+</body>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="/assets/semantic/semantic.min.js"></script>
+  <script src="/script/javascript.js"></script>
+</html>
